@@ -15,6 +15,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Daftar Belanja"),),
       body: Column(
         children: [
           Padding(
@@ -25,11 +26,11 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
                   child: TextField(
                     controller: _controller,
                     decoration:
-                        InputDecoration(hintText: 'Masukkan nama barang'),
+                        const InputDecoration(hintText: 'Masukkan nama barang'),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                   onPressed: () {
                     _shoppingService.addShoppingItem(_controller.text);
                     _controller.clear();
@@ -52,7 +53,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
                     return ListTile(
                       title: Text(item!),
                       trailing: IconButton(
-                        icon: Icon(Icons.delete),
+                        icon: const Icon(Icons.delete),
                         onPressed: () {
                           _shoppingService.removeShoppingItem(key);
                         },
